@@ -1,0 +1,17 @@
+{{define "footer1"}}
+    <div class="zz-fotter" style="height: 80px;">
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a href="https://beian.miit.gov.cn/" style="height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;" target="_blank">备案号: 鲁ICP备2022022501号-1</a>
+
+            <a target="_blank"
+                                                                   href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=37028102001248"
+                                                                   style="margin-top:2px;display:inline-block;text-decoration:none;height:20px;line-height:20px;">
+            {{if eq .cdn false}}
+            <img src="/images/icon.png" style="float:left;"/>
+            {{else}}
+            <img src="{{.cdnUrl}}/images/icon.png" style="float:left;"/>
+            {{end}}
+            <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">
+                鲁公网安备37028102001248号</p></a></div>
+    </div>
+{{end}}

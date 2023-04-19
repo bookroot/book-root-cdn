@@ -1,0 +1,11 @@
+<html lang="en"><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="{{.keyword}}"><meta name="description" content="{{.description}}"><title>{{.title}}</title>{{template "common-css" .}}
+<link rel="stylesheet" href="{{.cdnUrl}}/css/donate.css?v={{.version}}"><link rel="shortcut icon" href="{{.cdnUrl}}/favicon.ico">{{template "toolbar" .}}<div class="z-home-box"><div><div class="col-md-2"></div><div class="donate-container row col-md-8"><div class="donate-content center-block"><div class="donate-title col-xs-12">贡献网盘资料</div><div><div class="donate-context-container col-xs-11"><span class="donate-context-span">由于网盘各个平台开放的支持情况不同，目前只支持pdf格式文件，可以上传到百度云盘后，贡献百度云网盘地址</span></div><div class="form-group col-xs-11"><label for="parseZone">网盘地址解析区(选填)</label>
+<textarea style="height:100px" id="parseZone" name="parseZone" class="form-control" placeholder="例如: 链接: https://pan.baidu.com/s/1qYuQe_SnNUhjyu2j6mMP1Q?pwd=d9vt 提取码: d9vt 复制这段内容后打开百度网盘手机App，操作更方便哦
+--来自百度网盘超级会员v3的分享"></textarea></div><div class="form-group col-xs-11"><label for="DonateTitle">标题(必填)</label>
+<input maxlength="128" autocomplete="off" type="input" class="form-control" id="DonateTitle" placeholder="资料标题,最多输入128个字符"></div><div class="form-group col-xs-11"><label for="shareUrl">百度网盘地址(必填)</label>
+<input maxlength="256" autocomplete="off" type="input" class="form-control" id="shareUrl" placeholder="网盘地址"></div><div class="form-group col-xs-11"><label for="shareCode">分享提取码(有提取码必填)</label>
+<input maxlength="16" type="input" autocomplete="off" class="form-control" id="shareCode" placeholder="分享提取码"></div><div class="form-group col-xs-11"><label for="remark">备注(必填)</label>
+<textarea maxlength="1024" placeholder="输入资料备注，最多1024个字符" autocomplete="off" style="height:100px" id="remark" name="remark" class="form-control"></textarea></div><div class="form-group col-xs-11"><button style="float:right" onclick=donateObject.save() type="button" class="btn btn-default">提交</button></div></div></div></div><div class="col-md-2"></div></div>{{template "footer" .}}</div>{{template "modal" .}}
+{{template "common-js" .}}
+<script src="{{.cdnUrl}}/js/main/user/donate.js?v={{.version}}"></script>
+<script>donateObject.initParse()</script>

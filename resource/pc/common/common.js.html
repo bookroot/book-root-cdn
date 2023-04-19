@@ -1,0 +1,7 @@
+{{define "common-js"}}
+<script src="{{.cdnUrl}}/js/main/common.js?v={{.version}}"></script>
+<script src="{{.cdnUrl}}/js/plugin/jquery.min.js"></script>
+<script src="{{.cdnUrl}}/js/plugin/bootstrap/bootstrap.min.js"></script>
+<script src="{{.cdnUrl}}/js/main/loading/loading.js"></script>
+<script src="{{.cdnUrl}}/js/plugin/template-web.js"></script>
+<script>common.SetBaseUrl("{{.baseUrl}}")</script>{{end}}

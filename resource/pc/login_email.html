@@ -1,0 +1,11 @@
+<html lang="en" xmlns="http://www.w3.org/1999/html"><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="{{.keyword}}"><meta name="description" content="{{.description}}"><title>{{.title}}</title><link rel="stylesheet" href="{{.cdnUrl}}/css/bootstrap/bootstrap.min.css"><link rel="stylesheet" href="{{.cdnUrl}}/css/login.css?v={{.version}}"><link rel="shortcut icon" href="{{.cdnUrl}}/favicon.ico"><div class="z-home-box"><div class="z-container"><div><div class="zz-dialog-box"><div class="zz-dialog zz-dialog-new"><div class="change-tab-box"><label class="chang-item" id="pw-login">邮箱登录</label></div><form><div class="form-group"><label for="email">邮箱</label>
+<input type="email" class="form-control" id="email" placeholder="请输入邮箱"></div><div class="form-group"><label for="password">密码</label>
+<input type="password" class="form-control" id="password" placeholder="请输入密码"></div><div class="row validCode form-group"><div class="col-md-6"><div class="form-group"><label for="validCode">验证码</label>
+<input class="form-control validCode_text" id="validCode" placeholder="validCode"></div></div><a href="javascript:;" onclick=EmailUserObject.refreshCode() class="col-md-6"><img id="verify-code" class="img-responsive" alt="登录验证码" src="/verify/image/{{.captchaId}}.png" width="200px" height="50px"></a></div><div class="row"><span class="col-md-1"></span>
+<button type="button" class="col-md-2 btn btn-success" onclick='EmailUserObject.login(!1,function(){window.location.href="/"})' id="lo">登录</button>
+<span class="col-md-1"></span>
+<a target="_blank" href="/email/reg.html" type="button" class="col-md-2 btn btn-primary" id="reg">注册</a>
+<span class="col-md-1"></span>
+<a target="_blank" href="/email/forget.html" type="button" class="col-md-2 btn btn-danger" id="forget">忘记密码</a></div></form></div></div></div></div><div class="zz-hint-box zz-hint-box-sew" id="zz-hint-box" style="display:none"></div></div></div><script src="{{.cdnUrl}}/js/main/common.js?v={{.version}}"></script>
+<script src="{{.cdnUrl}}/js/main/email-user.js?v={{.version}}"></script>
+<script>EmailUserObject.setCaptchaId("{{.captchaId}}"),common.SetBaseUrl("{{.baseUrl}}")</script>
