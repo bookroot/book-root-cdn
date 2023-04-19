@@ -1,0 +1,6 @@
+<html lang="en"><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="{{.keyword}}"><meta name="description" content="{{.description}}"><title>{{.title}}</title>{{template "common-css" .}}
+<link rel="stylesheet" href="{{.cdnUrl}}/css/success.css?v={{.version}}"><link rel="shortcut icon" href="{{.cdnUrl}}/favicon.ico">{{template "toolbar" .}}<div class="z-home-box" style="min-height:0"><div class="z-container container"><div class="success-modal col-xs-12 view"><a href="/user/donate_list" class="success-modal-title"><img src="/images/back.png" alt="back" srcset>
+<span style="margin-left:8px">管理需求列表</span></a><div class="success-modal-content"><div class="content-title">{{.content}}</div><img class="img-responsive center-block" alt="Responsive image" src="{{.cdnUrl}}/images/success.png" alt></div><div class="success-modal-footer row"><a href="/donate/info/{{.uuid}}" class="col-xs-4 success-modal-btn">查看需求</a>
+<a href="/user/seek/edit/{{.uuid}}" class="success-modal-btn col-xs-4">重新编辑</a>
+<a href="/user/seek" class="success-modal-btn col-xs-4">再次发布</a></div></div></div>{{template "footer" .}}</div>{{template "modal" .}}
+{{template "common-js" .}}

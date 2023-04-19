@@ -1,0 +1,13 @@
+<html lang="en"><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="{{.keyword}}"><meta name="description" content="{{.description}}"><title>{{.title}}</title>{{template "common-css" .}}
+<link rel="stylesheet" href="{{.cdnUrl}}/css/list.css?v={{.version}}"><link rel="shortcut icon" href="{{.cdnUrl}}/favicon.ico"><style>.my-page{width:100%;display:flex;align-items:center;justify-content:center}.zz-fotter{z-index:99}</style>{{template "toolbar" .}}<div class="z-home-box"><div class="z-container"><div class="zz-top"><div class="z-nav-box"><div class="z-main-header"><nav class="z-main-nav"><div class="z-phone-hide" id="nav-list">{{range $i, $v := .categorys}}
+<a href="/class/{{$v.Id}}.html" id="{{$v.CategoryUuid}}" data-id="{{$v.CategoryUuid}}" class="z-nav-item">{{$v.CategoryName}}</a>
+{{end}}</div></nav><nav class="z-view-nav" id="z-view-hide-box"><div class="z-view-hide" id="z-view-hide">{{range $i, $v := .sonMenu}}
+<a href="/class/{{$v.Id}}.html" data-parentid="{{$v.ParentCategoryUuid}}" id="{{$v.CategoryUuid}}" class="z-view-item"><span>{{$v.CategoryName}}</span></a>
+{{end}}</div></nav></div></div></div><div class="z-main-body-box"><div class="z-timeline-index-view"><div class="z-timeline-container" id="z-timeline-container"><div class="z-timeline-second">{{range $i, $v := .list}}
+<a class="all-a" href="/means/{{$v.Id}}.html"><div class="list-item"><div class="item-box"><div class="left-box"><img src="{{$v.Cover}}" alt></div><div class="right-box"><div class="list-item-title"><span>{{$v.Title}}</span><span class="zz-tag">{{$v.CategoryDetail.CategoryName}}</span></div><div class="list-item-info">{{$v.Keyword}}</div></div></div></div></a>{{end}}</div></div>{{if eq (len .list) 0}}<div class="zz-no-more" id="zz-no-more">没有更多了,您可以去<a href="/user/seek">我要找资料</a>试试~</div><div id="zz-no-data" class="zz-no-data" style="display:none">暂无数据</div>{{else}}
+{{.page}}
+{{end}}</div></div></div><div class="back-top" id="myBtn" onclick=common.toTop()>▲</div><div class="z-info-box-z" id="z-info-box"></div><div class="zz-hint-box zz-hint-box-sew" id="zz-hint-box" style="display:none"></div>{{template "footer" .}}</div>{{template "modal" .}}
+{{template "common-js" .}}
+<script src="{{.cdnUrl}}/js/main/menu.js?v={{.version}}"></script>
+<script src="{{.cdnUrl}}/js/main/index.js?v={{.version}}"></script>
+<script>$(function(){loadingShow(),setTimeout(()=>{loadingHide()},1e3)}),menuObject.setCaches("{{.categoryUuid}}"),menuObject.category(),IndexObject.SetPosition("{{.position}}")</script>
